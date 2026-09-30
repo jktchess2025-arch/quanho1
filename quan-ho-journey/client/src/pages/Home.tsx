@@ -21,7 +21,7 @@ const imagePaths = {
   festival: `${import.meta.env.BASE_URL}images/di-san-van-hoa-la-gi-9.webp`,
   practitioner: `${import.meta.env.BASE_URL}images/hatquanho.jpg`,
   hat: `${import.meta.env.BASE_URL}images/images.jpg`,
-  map: `${import.meta.env.BASE_URL}images/vietnam-map-preview.png`,
+  map: `${import.meta.env.BASE_URL}images/vietnam-map.webp`,
 };
 
 const navItems = [
