@@ -21,9 +21,28 @@ const layouts = [
 ] as const;
 
 const childSelectors = layouts.map(layout => `.${layout} > *`);
+/**
+ * Normalizes a CSS selector for comparison by trimming surrounding
+ * whitespace and collapsing the spacing around child combinators (`>`)
+ * to a single consistent format.
+ *
+ * @param selector - The raw CSS selector string to normalize.
+ * @returns The normalized selector string.
+ */
 const normalizeSelector = (selector: string) =>
   selector.trim().replace(/\s*>\s*/g, " > ");
 
+/**
+ * Finds every `min-width` declaration defined directly on rules in the
+ * parsed stylesheet whose normalized selector list includes the given
+ * selector. Only declarations that are direct children of a matching
+ * rule are considered; nested descendant nodes are ignored.
+ *
+ * @param selector - The normalized selector to match against each rule's
+ * selectors.
+ * @returns An array of objects pairing the matching rule with its
+ * `min-width` declaration.
+ */
 function minimumWidthsFor(selector: string) {
   const matches: { rule: Rule; declaration: Declaration }[] = [];
 
