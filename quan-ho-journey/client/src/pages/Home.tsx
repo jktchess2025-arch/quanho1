@@ -17,10 +17,11 @@ import {
 } from "lucide-react";
 
 const imagePaths = {
-  singers: "/manus-storage/quan-ho-singers_1504465b.jpg",
-  festival: "/manus-storage/lim-festival_b9bdef24.jpg",
-  practitioner: "/manus-storage/cultural-practitioner_82f52fd0.jpg",
-  hat: "/manus-storage/non-quai-thao_c06c435a.jpg",
+  singers: "/images/quan-ho-singers.jpg",
+  festival: "/images/di-san-van-hoa-la-gi-9.webp",
+  practitioner: "/images/hatquanho.jpg",
+  hat: "/images/images.jpg",
+  map: "/images/vietnam-map.webp",
 };
 
 const navItems = [
@@ -238,16 +239,28 @@ export default function Home() {
               <p className="heading-note">A region is more than a point on a map. It is the villages, rivers and relationships that let a tradition stay alive.</p>
             </div>
             <div className="map-layout">
-              <div className="map-card">
-                <div className="map-label north">NORTHERN VIET NAM</div>
-                <div className="river river-one" /><div className="river river-two" />
-                <div className="map-silhouette" aria-hidden="true"><span className="delta" /><span className="coast" /></div>
-                <button className={`map-pin pin-bacninh ${selectedRegion === "bacninh" ? "selected" : ""}`} onClick={() => setSelectedRegion("bacninh")}><b />Bắc Ninh</button>
-                <button className={`map-pin pin-bacgiang ${selectedRegion === "bacgiang" ? "selected" : ""}`} onClick={() => setSelectedRegion("bacgiang")}><b />Bắc Giang</button>
-                <span className="map-label kinbac">K I N H  BẮC</span>
-                <span className="map-label river-label">Cầu River</span>
-                <span className="map-legend"><MapPin size={13} /> illustrative map / not to scale</span>
-              </div>
+              <figure className="map-card">
+                <div className="map-title">VIET NAM / KINH BẮC</div>
+                <div className="map-image-wrap">
+                  <img src={imagePaths.map} width={624} height={468} alt="Outline map of Viet Nam, with Bắc Ninh and Bắc Giang marked in the north" />
+                  {/* Approximate city centers on this 624 × 468 raster: Bắc Ninh
+                      21°11′N 106°03′E; Bắc Giang 21°17′N 106°14′E.
+                      Keep points and leader lines in image coordinates when resizing. */}
+                  <svg className="map-markers" viewBox="0 0 624 468" aria-hidden="true">
+                    <g className={selectedRegion === "bacninh" ? "selected" : ""}>
+                      <polyline points="322,89 275,120 165,120" />
+                      <circle cx="322" cy="89" r="2.5" />
+                    </g>
+                    <g className={selectedRegion === "bacgiang" ? "selected" : ""}>
+                      <polyline points="327,86 375,60 440,60" />
+                      <circle cx="327" cy="86" r="2.5" />
+                    </g>
+                  </svg>
+                  <button className={`map-pin pin-bacninh ${selectedRegion === "bacninh" ? "selected" : ""}`} aria-pressed={selectedRegion === "bacninh"} onClick={() => setSelectedRegion("bacninh")}>Bắc Ninh</button>
+                  <button className={`map-pin pin-bacgiang ${selectedRegion === "bacgiang" ? "selected" : ""}`} aria-pressed={selectedRegion === "bacgiang"} onClick={() => setSelectedRegion("bacgiang")}>Bắc Giang</button>
+                </div>
+                <figcaption className="map-legend"><MapPin size={13} /> Northern Viet Nam · approximate city locations</figcaption>
+              </figure>
               <div className="region-detail">
                 <span className="detail-number">0{selectedRegion === "bacninh" ? 1 : 2}</span>
                 <p className="eyebrow brass">{regions[selectedRegion].kicker}</p>
@@ -289,7 +302,7 @@ export default function Home() {
             <div className="performer-grid">
               <div className="performer-card performer-female"><span className="role-index">01</span><span className="role-tag">female singer</span><h3>liền chị</h3><p>A female Quan Họ singer, often singing in a group and leading or joining the exchange.</p><div className="card-line" /><span className="vietnamese">chị cả / chị hai / chị ba</span></div>
               <div className="performer-card performer-male"><span className="role-index">02</span><span className="role-tag">male singer</span><h3>liền anh</h3><p>A male Quan Họ singer, responding to the liền chị with a matching melody and new lyrics.</p><div className="card-line" /><span className="vietnamese">anh cả / anh hai / anh ba</span></div>
-              <div className="performer-photo"><img src={imagePaths.practitioner} alt="A Quan Họ cultural practitioner in traditional clothing" /><div className="photo-label"><span>living archive</span><strong>One voice<br />becomes many.</strong></div></div>
+              <div className="performer-photo"><img src={imagePaths.practitioner} alt="Quan Họ singers performing on a boat in traditional clothing" /><div className="photo-label"><span>living archive</span><strong>One voice<br />becomes many.</strong></div></div>
             </div>
           </div>
         </section>
