@@ -66,6 +66,8 @@ img { display: block; max-width: 100%; }
 .opening-footer { display: flex; justify-content: space-between; align-items: center; color: rgba(245,240,231,.42); font-size: 9px; }.opening-hint { color: rgba(245,240,231,.38); font-size: 8px; letter-spacing: .09em; }.opening-footer button { display: inline-flex; align-items: center; gap: 10px; padding: 11px 0; color: var(--brass); background: transparent; border: 0; font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: .1em; }.opening-footer button svg { transition: transform .2s var(--ease-out); }.opening-footer button:hover svg { transform: translateX(5px); }
 @keyframes opening-stage-out { to { opacity: 0; transform: translateX(-18px); } } @keyframes opening-stage-in { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } } @keyframes opening-exit { to { opacity: 0; visibility: hidden; pointer-events: none; } }
 .content-width { width: min(1120px, calc(100% - 80px)); margin: 0 auto; }
+/* Keep grid/flex children shrinkable so long text cannot force neighboring content to overlap. */
+.intro-grid > *, .map-layout > *, .exchange-stage > *, .sound-grid > *, .performer-grid > *, .costume-layout > *, .festival-grid > *, .why-content > *, .sources-grid > * { min-width: 0; }
 .section-pad { padding: 128px 0; position: relative; }
 .section-dark { background: var(--ink); color: var(--paper); }
 .section-indigo { background: var(--ink-2); color: var(--paper); }
