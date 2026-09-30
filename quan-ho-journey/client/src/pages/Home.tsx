@@ -17,11 +17,11 @@ import {
 } from "lucide-react";
 
 const imagePaths = {
-  singers: "/images/quan-ho-singers.jpg",
-  festival: "/images/di-san-van-hoa-la-gi-9.webp",
-  practitioner: "/images/hatquanho.jpg",
-  hat: "/images/images.jpg",
-  map: "/images/vietnam-map.webp",
+  singers: `${import.meta.env.BASE_URL}images/quan-ho-singers.jpg`,
+  festival: `${import.meta.env.BASE_URL}images/di-san-van-hoa-la-gi-9.webp`,
+  practitioner: `${import.meta.env.BASE_URL}images/hatquanho.jpg`,
+  hat: `${import.meta.env.BASE_URL}images/images.jpg`,
+  map: `${import.meta.env.BASE_URL}images/vietnam-map-preview.png`,
 };
 
 const navItems = [
