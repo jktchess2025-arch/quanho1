@@ -45,6 +45,15 @@ jobs:
         working-directory: quan-ho-journey
         run: pnpm exec vite build --base=/quanho1/
 
+      - name: Copy website images
+        run: |
+          mkdir -p quan-ho-journey/dist/public/images
+          cp quan-ho-singers.jpg quan-ho-journey/dist/public/images/
+          cp di-san-van-hoa-la-gi-9.webp quan-ho-journey/dist/public/images/
+          cp hatquanho.jpg quan-ho-journey/dist/public/images/
+          cp images.jpg quan-ho-journey/dist/public/images/
+          cp vietnam-map-preview.png quan-ho-journey/dist/public/images/
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
