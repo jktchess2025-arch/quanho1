@@ -294,6 +294,22 @@ export default function Home() {
             <div><p className="eyebrow red"><span /> Listen closely</p><h2>How does<br /><i>it sound?</i></h2><p className="sound-lede">Quan Họ is first and foremost vocal music. Its signature is the human voice passing a melody between people.</p><div className="technique-list"><span><b>01</b> restrained</span><span><b>02</b> resonant</span><span><b>03</b> ringing</span><span><b>04</b> staccato</span></div></div>
             <div className="sound-note"><div className="sound-note-icon"><Music2 size={23} /></div><p className="eyebrow red">A useful distinction</p><h3>Voices first.<br />Instruments later.</h3><p>Traditional Quan Họ singing can be performed without instrumental accompaniment. Instruments may appear in later stage or festival contexts, but they are not what defines the original singing exchange.</p><div className="sound-rule" /><span>listen for the breath between lines</span></div>
           </div>
+          <div className="content-width watch-panel">
+            <p className="eyebrow red"><span /> Watch and listen</p>
+            <h3>Quan Họ Singing and Xẩm Singing — Vietnamese Folk Music</h3>
+            <p className="watch-description">Explore two Vietnamese folk music traditions in this video from Explore Hanoi.</p>
+            <div className="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/czlMNcSFWjc"
+                title="Quan Họ Singing and Xẩm Singing - Vietnamese Folk Music"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <a className="watch-link" href="https://www.youtube.com/watch?v=czlMNcSFWjc" target="_blank" rel="noreferrer">Watch on YouTube <ExternalLink size={14} /></a>
+          </div>
         </section>
 
         <section id="performers" className="performers section-paper section-pad">

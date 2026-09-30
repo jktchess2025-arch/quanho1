@@ -214,6 +214,13 @@ h2 { font-size: clamp(49px, 6.2vw, 88px); line-height: 1.15; margin-bottom: 0; }
 .sound-rule { width: 46px; height: 1px; background: var(--red); margin: 28px 0 16px; }
 .sound-note > span { font-family: var(--mono); font-size: 9px; color: var(--red); text-transform: uppercase; letter-spacing: .12em; }
 
+.watch-panel { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
+.watch-panel h3 { font-size: clamp(26px, 3.5vw, 42px); line-height: 1.2; color: var(--ink); margin-bottom: 16px; }
+.watch-description { color: var(--muted); font-size: 14px; line-height: 1.8; margin-bottom: 24px; }
+.video-frame { aspect-ratio: 16 / 9; background: var(--ink); }
+.video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+.watch-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; color: var(--red); font-family: var(--mono); font-size: 11px; }
+
 .performer-grid { margin-top: 75px; display: grid; grid-template-columns: 1fr 1fr 1.04fr; gap: 16px; }
 .performer-card { min-height: 330px; padding: 26px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
 .performer-female { background: var(--red); color: var(--paper); }
